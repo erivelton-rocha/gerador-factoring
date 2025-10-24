@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane minHeight="400.0" minWidth="537.0" prefHeight="400.0" prefWidth="537.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.factoring.pdf2csv.controller.MainController">
+    <VBox alignment="CENTER" prefHeight="346.0" prefWidth="505.0" spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <padding>
+            <Insets bottom="20" left="20" right="20" top="60" />
+        </padding>
+
+        <Label style="-fx-font-size: 18px;" text="Conversor de PDF para CSV" />
+
+        <HBox spacing="5">
+            <Label text="Arquivo PDF:" />
+            <TextField fx:id="filePathField" editable="false" minWidth="300">
+            <HBox.margin>
+               <Insets left="10.0" />
+            </HBox.margin></TextField>
+            <Button onAction="#selectPdfFile" text="Selecionar">
+            <HBox.margin>
+               <Insets left="10.0" />
+            </HBox.margin></Button>
+        </HBox>
+
+        <HBox spacing="5">
+            <Label text="Banco:" />
+            <ComboBox fx:id="bankComboBox" prefHeight="26.0" prefWidth="123.0">
+            <padding>
+               <Insets left="10.0" />
+            </padding>
+            <HBox.margin>
+               <Insets left="10.0" />
+            </HBox.margin></ComboBox>
+        </HBox>
+
+        <HBox spacing="5">
+            <Label text="Valor Total dos Títulos:" />
+            <TextField fx:id="totalValueField">
+            <HBox.margin>
+               <Insets left="10.0" />
+            </HBox.margin></TextField>
+        </HBox>
+
+        <HBox spacing="5">
+            <Label text="Total Pago ao Cedente:" />
+            <TextField fx:id="totalPaidField">
+            <HBox.margin>
+               <Insets left="10.0" />
+            </HBox.margin></TextField>
+        </HBox>
+
+        <HBox spacing="5">
+            <Label text="Taxa IOF (%):" />
+            <TextField fx:id="iofRateField">
+            <HBox.margin>
+               <Insets left="10.0" />
+            </HBox.margin></TextField>
+        </HBox>
+
+        <HBox spacing="5">
+            <Label text="Tarifa:" />
+            <TextField fx:id="feeField">
+            <HBox.margin>
+               <Insets left="10.0" />
+            </HBox.margin></TextField>
+        </HBox>
+
+        <Button onAction="#convertToTxt" text="Processar Arquivo">
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin></Button>
+
+        <Label fx:id="statusLabel" prefHeight="18.0" prefWidth="430.0" style="-fx-text-fill: green;" text="" />
+    </VBox>
+</AnchorPane>
